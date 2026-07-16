@@ -8,7 +8,7 @@ ros2 topic graphic /camera/image_raw --fps 10
 ros2 topic graphic /joint_states
 ```
 
-v0.1.0 ships the first helper: `graphic`, a terminal viewer for common sensor
+The `ros2_helper` package ships `graphic`, a terminal viewer for common sensor
 topics. The ROS 2 CLI plugin is intentionally thin and delegates rendering to
 the C++ executable `ros2-helper-graphic`.
 
@@ -240,17 +240,15 @@ ros2 topic graphic /scan --fps 10
 
 ## Runtime Dependencies
 
-`chafa` is required for terminal image rendering. The package will declare:
+`chafa` is required for terminal image rendering. The package declares:
 
 ```xml
 <exec_depend>chafa</exec_depend>
 ```
 
-after the pending `chafa` rosdep key is merged into `rosdistro`.
-
 ## Roadmap
 
-- `ros2 topic graphic`: complete in v0.1.0
+- `ros2 topic graphic`: complete
 - `ros2 tui`: initial interactive helper shell
 - `plot`: planned
 - `explain`: planned
@@ -264,10 +262,10 @@ unless the variable is already set by the user.
 
 ## Release Checklist
 
-1. Confirm the `chafa` rosdep key PR has been merged.
-2. Add `<exec_depend>chafa</exec_depend>` to `package.xml`.
-3. Bump the package version.
-4. Create an annotated tag, for example `git tag -a v0.1.0`.
+1. Confirm the package is `ros2_helper` and the version is `0.1.2`.
+2. Confirm `<exec_depend>chafa</exec_depend>` resolves through rosdep.
+3. Commit the release-prep changes with `git commit -am "Prepare ros2_helper 0.1.2 release"`.
+4. Create an annotated tag with `git tag -a v0.1.2 -m "ros2_helper 0.1.2"`.
 5. Run `bloom-release --rosdistro jazzy ...`.
 6. Wait for the rosdistro release PR to merge.
 7. Confirm the build farm completed and the apt repository synced.

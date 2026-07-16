@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>ros2_helper</name>
-  <version>0.1.0</version>
+  <version>0.1.2</version>
   <description>Terminal-first helper tools for ROS 2</description>
   <maintainer email="7nbaek@gmail.com">Namheon Baek</maintainer>
   <license>Apache-2.0</license>
@@ -17,7 +17,7 @@
   <exec_depend>ros2node</exec_depend>
   <exec_depend>ros2service</exec_depend>
   <exec_depend>ros2topic</exec_depend>
-  <!-- TODO: add exec_depend chafa after the chafa rosdep key is merged. -->
+  <exec_depend>chafa</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
